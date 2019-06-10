@@ -1,0 +1,66 @@
+html{
+  box-sizing: border-box;
+  font-size: 62.5%;/**1rem = 10px**/
+}
+*, *:before, *:after{
+  box-sizing: inherit;
+}
+body{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.6rem;
+  line-height: 2;
+}
+/** Globales **/
+.contenedor{
+  max-width: 120rem;
+  margin:0 auto;
+}
+h1, h2, h3, h4, h5, h6{
+  font-family:'PT Sans', sans-serif;
+  line-height: 2;
+}
+
+h1{
+  font-size: 4.8rem;
+}
+h2{
+  font-size: 4rem;
+}
+h3{
+  font-size: 3.2rem;
+}
+h4{
+  font-size: 2.8rem;
+}
+h5{
+  font-size: 2rem;
+}
+h6{
+  font-size: 1.8rem;
+}
+img{
+  max-width: 100%;
+}
+
+/** Utilidades **/
+.txt_center{
+  text-align: center;
+}
+.fnt_w300{
+  font-weight: 300;
+}
+.fnt_w400{
+  font-weight: 400;
+}
+.fnt_w700{
+  font-weight: 700;
+}
+.txt_white{
+  color:#ffff;
+}
+.txt_black{
+  color:#000000;
+}
+.txt_upper{
+  text-transform: uppercase;
+}
