@@ -13,6 +13,7 @@ body{
 /** Globales **/
 .contenedor{
   max-width: 120rem;
+  width:95%;
   margin:0 auto;
 }
 h1, h2, h3, h4, h5, h6{
@@ -26,6 +27,7 @@ h1{
 }
 h2{
   font-size: 4rem;
+  line-height: 1.2;
 }
 h3{
   font-size: 3.2rem;
@@ -71,8 +73,69 @@ a{
 .margin-zero{
   margin:0;
 }
+.gap-20{
+  margin-right: 2rem;
+}
 
+/*Grid*/
+ @media (min-width: 700px) {
+  .grid{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .columns-center{
+    justify-content: center;
+  }
+  .columns-4{
+    flex: 0 0 calc(33.3% - 1rem);
+  }
+  .columns-6{
+    flex: 0 0 calc(50% - 1rem);
+  }
+  .columns-8{
+    flex: 0 0 calc(66.6% - 1rem);
+  }
+  .columns-10{
+    flex: 0 0 calc(83.3% - 1rem);
+  }
+  .columns-12{
+    flex: 0 0 100%;
+  }
+}
 
+/*Botones*/
+.btn{
+  color:#fff;
+  border:none;
+  display: block;/*Va tomar todo el espacio*/
+  text-align: center;
+  padding: 1rem 3rem;
+  margin:2rem 0;
+  text-decoration: none;
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  flex: 0 0 100%; /*This is for the button send which as display flex, and it will grow up*/
+}
+.btn:hover{
+  cursor: pointer;
+
+}
+ @media (min-width: 700px) {
+  .btn{
+    display: inline-block;
+    flex: 0 0 auto;
+  }
+}
+.btn-primary{
+  background-color:#000;
+}
+
+.btn-secondary{
+  background-color: #784d3c;
+}
 /*Header*/
 @media (min-width:700px) {
   .main-bar{
@@ -89,6 +152,7 @@ a{
   background-repeat: no-repeat;
   background-position: center center;
   height: 60rem;
+  margin-bottom:3rem;
 }
 .site-header h1 span{
   font-weight: 700;
@@ -122,4 +186,106 @@ a{
   .text-header{
     margin-top: 15rem;
   }
+}
+
+/** Main Content **/
+.main-content{
+  display: flex;
+  flex-wrap:wrap;
+}
+.blog, .courses{
+  flex: 0 0 100%;
+}
+.courses{/* Posiciona primero los cursos, al darle un valor negativo */
+  order:-1;
+}
+ @media (min-width:700px) {
+  .main-content{
+    justify-content: space-between;
+  }
+  .blog{
+    flex-basis: 66.6%
+  }
+  .courses{
+    flex-basis: calc(33.3% - 4rem);
+    order:2;
+  }
+}
+.post-blog{
+  margin-bottom:2rem;
+  border-bottom: 1px solid #e1e1e1;
+}
+.post-blog:last-of-type{
+  border-bottom:none;
+}
+
+/* Courses list*/
+.list-courses{
+  padding:0;
+  list-style: none;
+}
+.course{
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid #e1e1e1;
+}
+.course:last-of-type{
+  border-bottom:none;
+}
+.course p{
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 700;
+  font-size:2rem;
+}
+.course p span, .course p.description{
+  font-weight: 400;
+}
+
+/** Site Footer **/
+.site-footer{
+  background-color: #000;
+  padding: 3rem;
+  margin-top:4rem;
+}
+.site-footer p{
+  color:#fff;
+  font-size: 4rem;
+  font-weight: 400;
+  font-family: 'PT Sans', sans-serif;
+  text-align: center;
+}
+.site-footer p span{
+  font-weight: 700;
+}
+
+/*Contact Form*/
+.contact-form{
+  background-color: #fff;
+  padding:5rem;
+}
+ @media (min-width: 700px) {
+   .contact-form{
+       margin-top:-10rem;
+   }
+}
+.contact-form .field{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.contact-form .field label{/*Da el espacio necesario al label*/
+  flex: 0 0 8rem;
+}
+.contact-form .field input:not([type="submit"]),
+.contact-form textarea{
+  flex: 1;
+  border: 1px solid #e1e1e1;
+  padding:1rem;
+}
+.contact-form textarea{
+  height: 20rem;
+}
+.contact-form .btn_send{
+  display: flex;
+  justify-content: flex-end;
 }
